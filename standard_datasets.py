@@ -20,5 +20,6 @@ def load_dataset(name: str, version: str, dst : str = ".") -> None:
     os.makedirs(dst)
 
     # import script and call its load_to function
-    script = __import__(datasets[name][version])
+    path_to_script = os.path.join("datasets", datasets[name][version])
+    script = __import__()
     script.load_to(dst)

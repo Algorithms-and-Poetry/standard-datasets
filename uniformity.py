@@ -7,12 +7,18 @@ datasets = {
 }
 
 def load_dataset(name: str, version: str, dst : str = ".") -> None:
-    if not name in datasets.keys():
+    dataset_exists = name in datasets.keys()
+    version_exists = version in datasets[name].keys()
+    
+    # check if dataset & version exist
+    if not dataset_exists:
         raise ValueError(f"There is no dataset with the name {name}")
-    if not version in datasets[name].keys():
+    if not version_exists:
         raise ValueError(f"The dataset with the name {name} doesn't have a version {version}")
-    script = __import__(datasets[name][version])
-
+    
+    # make directories
     os.makedirs(dst)
 
+    # import script and call its load_to function
+    script = __import__(datasets[name][version])
     script.load_to(dst)

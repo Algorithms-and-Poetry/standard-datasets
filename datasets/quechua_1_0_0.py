@@ -41,7 +41,11 @@ gender_map = {
     "a5":"female",
     "a6":"male",
 }
-
+def load_to_(dst):
+  df=pd.DataFrame({"a":"A", "b":"B"}, index=[0])
+  save_dir=join(dst,"SAVEDIR")
+  os.makedirs(save_dir,exist_ok=True)
+  df.to_csv(join(save_dir, "test_DataFrame.csv"))
 def load_to(dst) -> None:
     """
     Loads dataset to the specified directory. Also adds train/test split, saves
@@ -114,7 +118,7 @@ def load_to(dst) -> None:
     df["age"]=df["speaker"].apply(lambda x: age_map[x])
 
     # add speaker genders
-    df["gender"]=df["speaker"].apply(gender_map) # lambda x: gender_map[x]
+    df["gender"]=df["speaker"].apply(lambda x: gender_map[x])
 
     # normalize categorical labels TODO rephrase comment !!
     df["emotion"]=df["emotion"].apply(lambda x: emotion_names_map[x]) 
@@ -125,12 +129,12 @@ def load_to(dst) -> None:
     df["dominance"]=df["dominance"].apply(lambda x: min_max_scale(x,[1,5],[0,1]))
 
     # create tables dir
-    tables_dir = "tables"
-    if not os.path.exists(tables_dir):
-        os.makedirs(tables_dir)
+    tables_dir = join(dst, "tables")
+    # if not os.path.exists(tables_dir):
+    os.makedirs(tables_dir, exist_ok=True)
 
     # save files table
-    df.to_csv(join("tables","quechua_files.csv"))
+    df.to_csv(join(dst,"tables","quechua_files.csv"))
 
     ####################
     # train/test split #

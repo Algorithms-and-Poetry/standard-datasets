@@ -11,6 +11,8 @@ The scripts in this directory are called automatically by `standard_datasets.py`
 
 ## Credit
 
-The dataset was created by Rosa Y. G. Paccotacya-Yanque, Candy A. Huanca-Anquise, Judith 
-Escalante-Calcina, Wilber R. Ramos-Lovon and Alvaro E. Cuno-Parari and distributed under
-the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.
+The dataset was authored by Rosa Y. G. Paccotacya-Yanque, Candy A. Huanca-Anquise, Judith 
+Escalante-Calcina, Wilber R. Ramos-Lovon and Alvaro E. Cuno-Parari.
+
+It is distributed under the 
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.

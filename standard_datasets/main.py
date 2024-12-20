@@ -4,7 +4,7 @@ from os.path import join
 
 datasets = {
     "quechua" : {
-        "1.0.0" : "quechua.v1_0_0"
+        "1.0.0" : "standard_datasets.quechua.v1_0_0"
     },
 }
 

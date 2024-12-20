@@ -1,1 +1,1 @@
-from main import load_dataset
+from standard_datasets.main import load_dataset

@@ -57,3 +57,4 @@ standard_datasets.load_dataset(
 Dataset | Data Description | Size | License | Remarks  
 --- | --- | --- | --- | ---
 quechua |  **dimensions**: arousal, dominance, valence **emotions**: : happy, sad, bored, fear, sleepy, calm, excited, angry neutral | 3.53GB (12420 audios) |  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | 
+subesco |  **emotions**: angry, disgusted, fearful, happy, neutral, sad, surprised | 2.03GB (7000 audios) |  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | 
